@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Login | Retail Sales Analyzer{% endblock %}
+
+{% block content %}
+<div class="auth-layout">
+
+    <div class="auth-left">
+        <div class="badge">📊 Advanced Retail Analytics</div>
+
+        <h1>Retail Sales Analyzer</h1>
+        <p>
+            Upload sales data, analyze performance, view charts,
+            and get quick business insights in one place.
+        </p>
+
+        <div class="feature-grid">
+            <div>🔐 Secure Login</div>
+            <div>📁 CSV / Excel Upload</div>
+            <div>📈 Interactive Charts</div>
+            <div>💡 Smart Insights</div>
+        </div>
+    </div>
+
+    <div class="auth-card">
+        <h2>Welcome Back 👋</h2>
+        <p class="subtitle">Login to continue your sales analysis</p>
+
+        <form method="POST" class="auth-form">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="name@company.com" required />
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required />
+            </div>
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <p class="auth-link">
+            New user?
+            <a href="{{ url_for('register') }}">Create an account</a>
+        </p>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+Order ID,Date,Category,Product,Region,City,Quantity,Sales
+ORD-10001,18-01-2024,Clothing,T-Shirt,East,Bhubaneswar,5,
+ORD-10002,12-01-2024,Clothing,T-Shirt,West,Pune,7,479.69
+ORD-10003,26-01-2024,Groceries,Dal,West,Mumbai,10,433.52
+ORD-10004,01-01-2024,Appliances,Iron Box,North,Chandigarh,8,5385.54
+ORD-10005,13-02-2024,Furniture,Wardrobe,South,Mangalore,5,1568.22
+ORD-10006,14-02-2024,Clothing,T-Shirt,South,Chennai,2,3359.02
+ORD-10007,16-01-2024,Stationery,Stapler,North,Delhi,12,4242.94
+ORD-10008,20-03-2024,Toys,Doll,West,Mumbai,5,7498.76
+ORD-10009,30-01-2024,Books,Textbook,East,Bhubaneswar,2,603.25
+ORD-10010,05-02-2024,Sports,Cricket Bat,North,Chandigarh,,1088.81
+ORD-10011,32-01-2024,Cosmetics,Shampoo,North,Jaipur,6,3326.38
+ORD-10012,01-02-2024,Sports,Cricket Bat,West,Pune,11,1706.02
+ORD-10013,22-03-2024,Furniture,Wardrobe,South,Chennai,5,8907.81
+ORD-10014,08-01-2024,Appliances,Microwave,East,Kolkata,6,7617.1
+ORD-10015,28-01-2024,Groceries,Rice,South,Mangalore,7,2556.12
+ORD-10016,23-03-2024,Stationery,Stapler,North,Chandigarh,11,N/A
+ORD-10017,12-03-2024,Cosmetics,Face Cream,South,Bangalore,3,2370.32
+ORD-10018,15-03-2024,Appliances,Ceiling Fan,East,Bhubaneswar,10,3970.22
+ORD-10019,12-01-2024,,RC Car,North,Chandigarh,3,4683.83
+ORD-10020,28-03-2024,Electronics,Laptop,North,Jaipur,11,1607.84
+ORD-10021,29-02-2024,Toys,Doll,South,Chennai,7,5443.82
+ORD-10022,28-03-2024,Appliances,Ceiling Fan,West,Mumbai,14,8493.39
+ORD-10023,25-02-2024,Clothing,Jacket,East,Kolkata,6,1181.66
+ORD-10024,03-02-2024,Furniture,Wardrobe,North,Delhi,12,7907.51
+ORD-10025,21-03-2024,Appliances,Microwave,West,Mumbai,15,1136.42
+ORD-10026,10-03-2024,Sports,Football,North,Jaipur,6,6910.1
+ORD-10027,15-01-2024,Appliances,Washing Machine,West,Pune,6,4499.73
+ORD-10028,13-03-2024,Books,,North,Chandigarh,1,2319.67
+ORD-10029,09-03-2024,Clothing,T-Shirt,East,Bhubaneswar,8,7381.0
+ORD-10030,22-01-2024,Furniture,Table,East,Kolkata,8,8532.27
+ORD-10031,29-03-2024,Sports,Dumbbells,North,Chandigarh,15,-450.0
+ORD-10032,26-02-2024,Groceries,Sunflower Oil,South,Chennai,11,5918.93
+ORD-10033,13-02-2024,Appliances,Iron Box,North,Lucknow,4,2177.34
+ORD-10034,31-03-2024,Electronics,Mobile,West,Pune,4,263.28
+ORD-10035,12-02-2024,Electronics,Mobile,North,Lucknow,15,476.43
+ORD-10036,10-03-2024,Clothing,Jeans,South,Bangalore,11,4471.65
+ORD-10037,22-02-2024,Furniture,Wardrobe,,Chandigarh,13,4362.16
+ORD-10038,24-02-2024,Groceries,Rice,North,Lucknow,11,3993.25
+ORD-10039,23-03-2024,Toys,Puzzle,East,Bhubaneswar,1,6125.61
+ORD-10040,14-01-2024,Clothing,T-Shirt,South,Chennai,12,3185.86
+ORD-10041,2024-15-99,Groceries,Dal,North,Chandigarh,9,4147.8
+ORD-10042,10-01-2024,Furniture,Sofa,South,Hyderabad,4,7895.48
+ORD-10043,02-01-2024,Cosmetics,Lipstick,North,Delhi,11,8993.69
+ORD-10044,28-01-2024,Clothing,Jeans,North,Jaipur,7,4473.64
+ORD-10045,19-02-2024,Toys,Doll,North,Jaipur,7,218.97
+ORD-10046,12-03-2024,Sports,Dumbbells,South,,7,6330.01
+ORD-10047,08-01-2024,Cosmetics,Face Cream,North,Chandigarh,5,2115.77
+ORD-10048,15-03-2024,Stationery,Notebook,East,Bhubaneswar,6,703.05
+ORD-10049,24-01-2024,Cosmetics,Face Cream,North,Delhi,9,904.98
+ORD-10050,16-01-2024,Clothing,T-Shirt,East,Kolkata,14,2269.79
+ORD-10051,11-01-2024,Stationery,Pen Set,West,Pune,10,549.73
+ORD-10052,10-02-2024,Toys,RC Car,South,Bangalore,4,6093.59
+ORD-10053,08-02-2024,Groceries,Sunflower Oil,South,Chennai,3,6110.87
+ORD-10054,13-03-2024,Cosmetics,Shampoo,North,Lucknow,1,4232.91
+ORD-10055,,Clothing,T-Shirt,West,Mumbai,4,4651.79
+ORD-10056,26-02-2024,Books,Novel,North,Chandigarh,6,abc##
+ORD-10057,02-01-2024,Appliances,Ceiling Fan,West,Pune,13,5954.99
+ORD-10058,18-01-2024,Appliances,Ceiling Fan,East,Kolkata,2,8462.58
+ORD-10059,04-02-2024,Sports,Cricket Bat,North,Lucknow,12,5068.37
+ORD-10060,22-03-2024,Sports,Football,East,Bhubaneswar,6,1991.66
+ORD-10061,07-01-2024,Sports,Dumbbells,South,Bangalore,15,8191.8
+ORD-10062,17-01-2024,Clothing,Saree,South,Bangalore,1,231.2
+ORD-10063,24-02-2024,Sports,Football,East,Bhubaneswar,8,5054.79
+,29-03-2024,Appliances,Washing Machine,North,Lucknow,2,8516.45
+ORD-10065,25-02-2024,Furniture,Chair,South,Mangalore,10,5062.22
+ORD-10066,06-01-2024,Furniture,Chair,South,Bangalore,6,8111.04
+ORD-10067,15-02-2024,Books,Textbook,East,Kolkata,4,6069.01
+ORD-10068,31-01-2024,Appliances,Iron Box,West,Pune,12,1560.07
+ORD-10069,12-02-2024,Furniture,Table,South,Chennai,1,1778.37
+ORD-10070,14-01-2024,Toys,Lego Set,South,Bangalore,3,7128.9
+ORD-10071,28-02-2024,Toys,Doll,South,Hyderabad,4,1956.24
+ORD-10072,25-01-2024,Books,Comic Book,North,Chandigarh,4,408.25
+ORD-10073,05-02-2024,Toys,RC Car,South,Bangalore,14,810.9
+ORD-10074,04-01-2024,Books,Self-Help Book,East,Kolkata,14,4918.7
+ORD-10075,03-02-2024,Clothing,Jacket,North,Jaipur,10,8670.3
+ORD-10076,10-02-2024,Electronics,Laptop,West,Pune,7,3242.05
+ORD-10077,02-02-2024,Toys,Doll,South,Chennai,15,5273.97
+ORD-10078,09-03-2024,Electronics,Headphones,North,Delhi,9,8345.06
+ORD-10079,12-02-2024,Groceries,Sunflower Oil,South,Chennai,2,8550.1
+ORD-10080,08-02-2024,Stationery,Stapler,East,Kolkata,14,1296.7
+ORD-10081,30-03-2024,Appliances,Ceiling Fan,East,Kolkata,7,3070.41
+ORD-10082,18-02-2024,Sports,Football,North,Chandigarh,7,6051.38
+ORD-10083,08-02-2024,Furniture,Sofa,South,Chennai,9,7536.78
+ORD-10084,24-03-2024,Sports,Football,South,Chennai,13,5303.87
+ORD-10085,06-03-2024,Books,Self-Help Book,South,Hyderabad,8,6145.52
+ORD-10006,14-02-2024,Clothing,T-Shirt,South,Chennai,2,3359.02
+ORD-10023,25-02-2024,Clothing,Jacket,East,Kolkata,6,1181.66
+ORD-10048,15-03-2024,Stationery,Notebook,East,Bhubaneswar,6,703.05

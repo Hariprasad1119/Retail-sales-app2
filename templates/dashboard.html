@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | Retail Sales Analyzer{% endblock %}
+{% block content %}
+<div class="dashboard-wrap">
+    <div class="topbar">
+        <div>
+            <h1>Retail Sales Dashboard</h1>
+            <p>Welcome back, <span id="userName">{{ username }}</span></p>
+        </div>
+        <a href="{{ url_for('logout') }}" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </div>
+
+    <div class="hero-card">
+        <div>
+            <h3><i class="fa-solid fa-file-arrow-up"></i> Upload Sales Data</h3>
+            <p>Supported file types: CSV, XLSX, XLS. The app detects columns like Date, Sales, Quantity, Category, Product, Region, and Order ID.</p>
+        </div>
+        <form id="uploadForm" class="upload-form">
+            <input type="file" id="salesFile" name="file" accept=".csv,.xlsx,.xls" required />
+            <button type="submit">Analyze File</button>
+        </form>
+        
+        <div class="filters-panel">
+            <div class="filter-group">
+                <label for="regionFilter">Region</label>
+                <select id="regionFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="categoryFilter">Category</label>
+                <select id="categoryFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="productFilter">Product</label>
+                <select id="productFilter"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="startDateFilter">Start Date</label>
+                <input type="date" id="startDateFilter" />
+            </div>
+            <div class="filter-group">
+                <label for="endDateFilter">End Date</label>
+                <input type="date" id="endDateFilter" />
+            </div>
+            <div class="filter-actions">
+                <button id="applyFiltersBtn" type="button" class="secondary-btn">Apply Filters</button>
+                <button id="resetFiltersBtn" type="button" class="ghost-btn">Reset</button>
+            </div>
+        </div>
+        <div id="statusMessage" class="status-message">Upload a file to start analysis.</div>
+    </div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-indian-rupee-sign"></i> Total Revenue</span>
+            <strong id="totalRevenue">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-database"></i> Total Records</span>
+            <strong id="totalRecords">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-chart-line"></i> Average Sale</span>
+            <strong id="averageSale">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-cart-shopping"></i> Orders</span>
+            <strong id="orderCount">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-box"></i> Total Quantity</span>
+            <strong id="totalQuantity">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-tags"></i> Top Category</span>
+            <strong id="topCategory">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-star"></i> Top Product</span>
+            <strong id="topProduct">—</strong>
+        </div>
+        <div class="kpi-card">
+            <span><i class="fa-solid fa-location-dot"></i> Top Region</span>
+            <strong id="topRegion">—</strong>
+        </div>
+    </div>
+
+    <div class="compare-grid">
+        <div class="panel compare-card">
+            <h3><i class="fa-solid fa-calendar-check"></i> Monthly Comparison</h3>
+            <div id="monthlyCompareValue" class="comparison-value">—</div>
+            <p id="monthlyCompareText" class="status-message">Loading analysis...</p>
+        </div>
+        <div class="panel compare-card">
+            <h3><i class="fa-solid fa-calendar-week"></i> Weekly Comparison</h3>
+            <div id="weeklyCompareValue" class="comparison-value">—</div>
+            <p id="weeklyCompareText" class="status-message">Loading analysis...</p>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Data Quality</h3>
+            <div id="qualityScoreValue" class="comparison-value">0%</div>
+            <p id="qualityScoreText" class="status-message">ETL quality check score.</p>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="panel full-span">
+            <h3><i class="fa-solid fa-timeline"></i> Sales Trend (Daily)</h3>
+            <canvas id="dailySalesChart" height="100"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-chart-column"></i> Weekly Performance</h3>
+            <canvas id="weeklySalesChart"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-chart-area"></i> Monthly Growth</h3>
+            <canvas id="monthlySalesChart"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-crystal-ball"></i> 3-Month Forecast</h3>
+            <canvas id="forecastSalesChart"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-chart-pie"></i> Category Distribution</h3>
+            <canvas id="categorySalesChart"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-earth-americas"></i> Regional Sales</h3>
+            <canvas id="regionSalesChart"></canvas>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-ranking-star"></i> Top 10 Products</h3>
+            <canvas id="topProductsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="lower-grid">
+        <div class="panel">
+            <h3><i class="fa-solid fa-lightbulb"></i> Key Insights</h3>
+            <ul id="insightsList" class="insights-list">
+                <li>Upload data to generate insights.</li>
+            </ul>
+        </div>
+        <div class="panel">
+            <h3><i class="fa-solid fa-handshake-angle"></i> AI Recommendations</h3>
+            <ul id="recommendationsList" class="insights-list">
+                <li>Upload data to generate recommendations.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="panel full-span">
+        <h3><i class="fa-solid fa-table-list"></i> Data Preview & Detected Columns</h3>
+        <div id="detectedColumns" class="badges"></div>
+        <div class="table-wrap">
+            <table id="dataTable">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel full-span">
+        <h3><i class="fa-solid fa-code"></i> SQL Query Inspector</h3>
+        <p class="subtitle">These are the equivalent SQL queries generated for the current analytics view.</p>
+        <div id="sqlInspector" class="sql-inspector">
+            <!-- SQL queries will be injected here -->
+        </div>
+    </div>
+
+    <div class="panel full-span">
+        <h3><i class="fa-solid fa-check-double"></i> Quality Control Details</h3>
+        <div id="qualityChecks" class="quality-grid"></div>
+    </div>
+
+    </div>
+
+    <!-- Floating Chatbot Widget -->
+    <div id="chatbotWidget" class="chatbot-widget">
+        <div id="chatbotHeader" class="chatbot-header">
+            <span><i class="fa-solid fa-robot"></i> Sales AI Assistant</span>
+            <button id="closeChatBtn"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+            <div class="message bot">Hello! I'm your Sales AI. Ask me anything about your data or business strategy!</div>
+        </div>
+        <form id="chatForm" class="chat-form">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+    <button id="openChatBtn" class="open-chat-btn"><i class="fa-solid fa-comment-dots"></i></button>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
